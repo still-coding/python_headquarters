@@ -13,6 +13,9 @@
 3. Запусти программу
 4. Выбери **"Open folder as vault"**
 5. Выбери корневую папку репозитория
+6. Сними галочку в настройках ![Show Inline Title](https://github.com/still-coding/python_headquarters/blob/main/img/readme_1.png?raw=true)
+7. Установи эти плагины: ![Community Plugins: 1. Automatic Table Of Contents. 2. Manual Sorting](https://github.com/still-coding/python_headquarters/blob/main/img/readme_2.png?raw=true)
+
 
 ### Полезные горячие клавиши:
 
