@@ -1,4 +1,4 @@
-[[00_intro|← 📚 Функции в Python]] | [[02_parameters_and_arguments|📦 Параметры и аргументы →]]
+[[00_intro|← 🍆 Функции]] | [[02_parameters_and_arguments|📦 Параметры и аргументы →]]
 
 ---
 # ⚙️ Основы функций
@@ -206,4 +206,5 @@ print(check_sign(0))   # zero
 
 ---
 
-[[00_intro|← 📚 Функции в Python]] | [[02_parameters_and_arguments|📦 Параметры и аргументы →]]
+[[00_intro|← 🍆 Функции]] | [[02_parameters_and_arguments|📦 Параметры и аргументы →]]
+

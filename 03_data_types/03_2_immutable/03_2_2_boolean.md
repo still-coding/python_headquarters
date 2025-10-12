@@ -220,7 +220,7 @@ print(get_user_name(user1))  # Иван
 print(get_user_name(user2))  # Анонимный пользователь
 print(get_user_name(user3))  # Анонимный пользователь
 ```
-
+[[img/]]
 ### Валидация данных
 
 ```python
