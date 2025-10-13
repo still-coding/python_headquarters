@@ -1,4 +1,4 @@
-[[09_higher_order_functions|← 🎭 Функции высших порядков]] | [[00_intro|📚 Функции - Оглавление]]
+[[09_higher_order_functions|← 🎭 Функции высших порядков]] | [[11_closures_and_decorators|🎁 Замыкания и декораторы →]]
 
 ---
 # 🔄 Рекурсия
@@ -528,4 +528,4 @@ Boom!
 
 ---
 
-[[09_higher_order_functions|← 🎭 Функции высших порядков]] | [[00_intro|📚 Функции - Оглавление]]
+[[09_higher_order_functions|← 🎭 Функции высших порядков]] | [[11_closures_and_decorators|🎁 Замыкания и декораторы →]]

@@ -233,118 +233,29 @@ print(multiply_by_10(5))  # 50
 print(multiply_by_2(7))   # 14
 ```
 
-### Замыкание (Closure)
-
-**Замыкание** — это функция, которая "запоминает" переменные из внешней области видимости.
+### Фабрики функций
 
 ```python
-def create_counter():
-    """Создаёт функцию-счётчик с внутренним состоянием"""
-    count = 0
-    
-    def increment():
-        nonlocal count
-        count += 1
-        return count
-    
-    return increment
-
-counter1 = create_counter()
-counter2 = create_counter()
-
-print(counter1())  # 1
-print(counter1())  # 2
-print(counter1())  # 3
-
-print(counter2())  # 1 — у каждого счётчика своё состояние
-print(counter2())  # 2
-```
-
-### Практический пример: конфигурируемые функции
-
-```python
-def create_validator(minimum, maximum):
+def create_power_function(exponent):
     """
-    Создаёт функцию-валидатор для диапазона значений.
+    Создаёт функцию для возведения в степень.
     
     Args:
-        minimum: Минимально допустимое значение
-        maximum: Максимально допустимое значение
+        exponent: Показатель степени
     
     Returns:
-        Функция-валидатор
+        Функция для возведения числа в заданную степень
     """
-    def validate(value):
-        return minimum <= value <= maximum
+    def power(base):
+        return base ** exponent
     
-    return validate
+    return power
 
-# Создаём валидаторы для разных диапазонов
-check_age = create_validator(0, 150)
-check_percent = create_validator(0, 100)
+square = create_power_function(2)
+cube = create_power_function(3)
 
-print(check_age(25))     # True
-print(check_age(200))    # False
-
-print(check_percent(50))   # True
-print(check_percent(150))  # False
-```
-
-## Декораторы — продвинутые функции высших порядков
-
-**Декоратор** — это функция, которая принимает функцию и возвращает модифицированную функцию.
-
-### Базовый пример
-
-```python
-def logger(function):
-    """Декоратор, который логирует вызовы функции"""
-    def wrapper(*args, **kwargs):
-        print(f"Вызов функции {function.__name__} с аргументами {args}")
-        result = function(*args, **kwargs)
-        print(f"Функция {function.__name__} вернула {result}")
-        return result
-    
-    return wrapper
-
-@logger
-def add(a, b):
-    return a + b
-
-result = add(3, 5)
-# Вызов функции add с аргументами (3, 5)
-# Функция add вернула 8
-print(result)  # 8
-```
-
-**Синтаксис `@декоратор` эквивалентен:**
-```python
-def add(a, b):
-    return a + b
-
-add = logger(add)
-```
-
-### Декоратор с параметрами
-
-```python
-def repeat(times):
-    """Декоратор, который повторяет функцию несколько раз"""
-    def decorator(function):
-        def wrapper(*args, **kwargs):
-            results = []
-            for _ in range(times):
-                results.append(function(*args, **kwargs))
-            return results
-        return wrapper
-    return decorator
-
-@repeat(3)
-def greeting(name):
-    return f"Привет, {name}!"
-
-print(greeting("Anna"))
-# ['Привет, Anna!', 'Привет, Anna!', 'Привет, Anna!']
+print(square(5))  # 25
+print(cube(5))    # 125
 ```
 
 ## Композиция функций
@@ -416,31 +327,37 @@ print(number_processor(-5))  # 20
 # abs(-5) = 5, 5 * 2 = 10, 10 + 10 = 20
 ```
 
-### Пример 2: Кеширование результатов
+### Пример 2: Конвейер обработки данных
 
 ```python
-def memoization(function):
-    """Декоратор для кеширования результатов функции"""
-    cache = {}
+def pipeline(*stages):
+    """Создаёт конвейер обработки данных"""
+    def process(data):
+        result = data
+        for stage in stages:
+            result = stage(result)
+        return result
     
-    def wrapper(*args):
-        if args not in cache:
-            print(f"Вычисление для {args}")
-            cache[args] = function(*args)
-        else:
-            print(f"Результат из кеша для {args}")
-        return cache[args]
-    
-    return wrapper
+    return process
 
-@memoization
-def fibonacci(n):
-    if n < 2:
-        return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+# Этапы обработки
+filter_positive = lambda numbers: [x for x in numbers if x > 0]
+double_all = lambda numbers: [x * 2 for x in numbers]
+sum_all = lambda numbers: sum(numbers)
 
-print(fibonacci(10))
-# Вычисления происходят только один раз для каждого n
+# Создаём конвейер
+process_numbers = pipeline(
+    filter_positive,
+    double_all,
+    sum_all
+)
+
+numbers = [-5, 3, -2, 7, -1, 4]
+result = process_numbers(numbers)
+print(result)  # 28
+# Положительные: [3, 7, 4]
+# Удвоенные: [6, 14, 8]
+# Сумма: 28
 ```
 
 ### Пример 3: Валидация с цепочкой правил
@@ -480,41 +397,45 @@ check_password = create_validator(
 )
 
 # Тестируем
-valid, message = check_password("Pass123")
-print(f"{'✓' if valid else '✗'} {message}")
+passwords = ["Pass123", "pass", "PASSWORD", "Pass1234"]
+for pwd in passwords:
+    valid, message = check_password(pwd)
+    print(f"{'✓' if valid else '✗'} '{pwd}': {message}")
 ```
 
-### Пример 4: Конвейер обработки данных
+### Пример 4: Создание условных функций
 
 ```python
-def pipeline(*stages):
-    """Создаёт конвейер обработки данных"""
-    def process(data):
-        result = data
-        for stage in stages:
-            result = stage(result)
-        return result
+def conditional_function(condition, true_func, false_func):
+    """
+    Создаёт функцию, которая выполняет разные действия в зависимости от условия.
     
-    return process
+    Args:
+        condition: Функция-условие, возвращающая bool
+        true_func: Функция для выполнения, если условие истинно
+        false_func: Функция для выполнения, если условие ложно
+    
+    Returns:
+        Функция, выполняющая условную логику
+    """
+    def execute(value):
+        if condition(value):
+            return true_func(value)
+        else:
+            return false_func(value)
+    
+    return execute
 
-# Этапы обработки
-filter_positive = lambda numbers: [x for x in numbers if x > 0]
-double_all = lambda numbers: [x * 2 for x in numbers]
-sum_all = lambda numbers: sum(numbers)
-
-# Создаём конвейер
-process_numbers = pipeline(
-    filter_positive,
-    double_all,
-    sum_all
+# Создаём функцию обработки чисел
+process_number = conditional_function(
+    condition=lambda x: x > 0,
+    true_func=lambda x: x * 2,      # Положительные удваиваем
+    false_func=lambda x: abs(x)     # Отрицательные делаем положительными
 )
 
-numbers = [-5, 3, -2, 7, -1, 4]
-result = process_numbers(numbers)
-print(result)  # 28
-# Положительные: [3, 7, 4]
-# Удвоенные: [6, 14, 8]
-# Сумма: 28
+print(process_number(5))   # 10
+print(process_number(-5))  # 5
+print(process_number(0))   # 0
 ```
 
 ## 💡 Лучшие практики
@@ -533,12 +454,26 @@ print(result)  # 28
        return lambda x: min_val <= x <= max_val
    ```
 
-3. **Используйте декораторы для cross-cutting concerns**
+3. **Комбинируйте map, filter, reduce для обработки данных**
    ```python
-   @logger
-   @timer
-   def important_function():
-       pass
+   from functools import reduce
+   
+   numbers = [1, 2, 3, 4, 5]
+   result = reduce(
+       lambda a, b: a + b,
+       filter(lambda x: x % 2 == 0, numbers)
+   )
+   ```
+
+4. **Используйте функции высших порядков для конфигурации**
+   ```python
+   def create_formatter(prefix, suffix):
+       def format_text(text):
+           return f"{prefix}{text}{suffix}"
+       return format_text
+   
+   html_bold = create_formatter("<b>", "</b>")
+   html_italic = create_formatter("<i>", "</i>")
    ```
 
 ### ❌ Плохие практики
@@ -566,7 +501,36 @@ print(result)  # 28
        return abs(x) * 3
    ```
 
-## 🔎 Проверка на ходу
+3. **Использование map/filter там, где лучше list comprehension**
+   ```python
+   # ❌ Менее читаемо
+   result = list(map(lambda x: x ** 2, filter(lambda x: x > 0, numbers)))
+   
+   # ✅ Более читаемо
+   result = [x ** 2 for x in numbers if x > 0]
+   ```
+
+## Когда использовать функции высших порядков
+
+**Используйте, когда:**
+- Нужна абстракция над операциями
+- Хотите параметризовать поведение
+- Создаёте гибкие API
+- Реализуете функциональные паттерны
+
+**Не используйте, когда:**
+- Код становится менее читаемым
+- Простой цикл понятнее
+- List comprehension более выразительны
+
+## Связь с другими концепциями
+
+Для более глубокого понимания функций высших порядков изучите:
+- [[11_closures_and_decorators|🎁 Замыкания и декораторы]] — продвинутые техники с функциями высших порядков
+- [[10_recursion|🔄 Рекурсия]] — рекурсивные функции высших порядков
+- [[08_lambda_functions|λ Lambda-функции]] — анонимные функции как аргументы
+
+## 🔍 Проверка на ходу
 
 Эксперименты в REPL:
 
@@ -580,12 +544,17 @@ print(result)  # 28
 >>> operations[1](3, 4)
 12
 >>>
->>> def create_adder(n):
-...     return lambda x: x + n
+>>> def apply_twice(func, x):
+...     return func(func(x))
 ...
->>> add_5 = create_adder(5)
->>> add_5(10)
-15
+>>> apply_twice(lambda x: x * 2, 5)
+20
+>>>
+>>> numbers = [1, 2, 3, 4, 5]
+>>> list(map(lambda x: x ** 2, numbers))
+[1, 4, 9, 16, 25]
+>>> list(filter(lambda x: x > 2, numbers))
+[3, 4, 5]
 ```
 
 ## Резюме
@@ -601,18 +570,17 @@ print(result)  # 28
 - `reduce(функция, итерируемый)` — свернуть
 - `sorted(итерируемый, key=функция)` — сортировать
 
-**Замыкания:**
-- Функция "запоминает" переменные из внешней области
-- Используются для создания функций с состоянием
-
-**Декораторы:**
-- Модифицируют поведение функций
-- Синтаксис: `@декоратор`
-
 **Преимущества:**
 - Абстракция и переиспользование кода
 - Создание гибких API
 - Функциональный стиль программирования
+- Композиция и модульность
+
+**Применение:**
+- Обработка коллекций данных
+- Создание конфигурируемых функций
+- Построение pipeline для обработки данных
+- Реализация функциональных паттернов
 
 ---
 

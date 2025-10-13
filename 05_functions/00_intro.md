@@ -181,7 +181,7 @@ def полная_функция(
 ### Lambda
 
 ```python
-квадрат = lambda x: x ** 2
+lambda x: x ** 2
 ```
 
 ### Декоратор
