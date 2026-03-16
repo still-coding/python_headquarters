@@ -44,6 +44,20 @@
 	- [[05_functions/09_higher_order_functions|Функции высшего порядка]]
 	- [[05_functions/10_recursion|Рекурсия]]
 	- [[05_functions/11_closures_and_decorators|Замыкания и декораторы]]
+6. Основы ООП
+	- [[06_oop/00_intro|Введение в ООП]]
+	- [[06_oop/01_classes_and_objects|Классы и объекты]]
+	- [[06_oop/02_attributes_and_methods|Атрибуты и методы]]
+	- [[06_oop/03_init_and_self|`__init__` и `self`]]
+	- [[06_oop/04_encapsulation|Инкапсуляция]]
+	- [[06_oop/05_inheritance|Наследование]]
+	- [[06_oop/06_polymorphism|Полиморфизм]]
+	- [[06_oop/07_magic_methods|Магические методы]]
+	- [[06_oop/08_class_and_static_methods|`@classmethod` и `@staticmethod`]]
+	- [[06_oop/09_composition_vs_inheritance|Композиция vs наследование]]
+	- [[06_oop/10_abc_and_protocol|ABC и Protocol]]
+	- [[06_oop/11_mro|MRO]]
+	- [[06_oop/12_object_lifecycle|Жизненный цикл объекта]]
 
 ---
 
