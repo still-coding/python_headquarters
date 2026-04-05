@@ -4,4 +4,6 @@
 
 ---
 
-[[00_table_of_contents|← ☰ Оглавление]] | [[02_how_to_run_python_code|👨🏻‍💻 Как запускать код на Python? →]]
+[[00_table_of_contents|← ☰ Оглавление]] | [[02_0_how_to_run_python_code|👨🏻‍💻 Как запускать код на Python? →]]
+
+---

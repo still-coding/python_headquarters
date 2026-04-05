@@ -1,0 +1,124 @@
+{
+  "customFileOrder": {
+    "/": [
+      "00_table_of_contents.md",
+      "01_prerequisites.md",
+      "02_basics",
+      "03_data_types",
+      "04_control_structures",
+      "05_file_io",
+      "06_functions",
+      "06_oop",
+      "07_exceptions",
+      "08_modules",
+      "img",
+      "README.md"
+    ],
+    "02_basics": [
+      "02_basics/02_0_how_to_run_python_code.md",
+      "02_basics/02_1_input_output.md",
+      "02_basics/02_2_operators.md"
+    ],
+    "03_data_types": [
+      "03_data_types/03_0_names_and_binding.md",
+      "03_data_types/03_1_intro.md",
+      "03_data_types/03_2_immutable",
+      "03_data_types/03_3_mutable",
+      "03_data_types/03_4_nested_structures.md"
+    ],
+    "03_data_types/03_2_immutable": [
+      "03_data_types/03_2_immutable/03_2_0_numbers.md",
+      "03_data_types/03_2_immutable/03_2_1_boolean.md",
+      "03_data_types/03_2_immutable/03_2_2_none.md",
+      "03_data_types/03_2_immutable/03_2_3_strings.md",
+      "03_data_types/03_2_immutable/03_2_4_str_methods.md",
+      "03_data_types/03_2_immutable/03_2_5_type_conversion.md"
+    ],
+    "03_data_types/03_3_mutable": [
+      "03_data_types/03_3_mutable/03_3_0_lists.md",
+      "03_data_types/03_3_mutable/03_3_1_list_methods.md",
+      "03_data_types/03_3_mutable/03_3_2_tuples.md",
+      "03_data_types/03_3_mutable/03_3_3_dicts.md",
+      "03_data_types/03_3_mutable/03_3_4_dict_methods.md",
+      "03_data_types/03_3_mutable/03_3_5_sets.md",
+      "03_data_types/03_3_mutable/03_3_6_set_methods.md"
+    ],
+    "04_control_structures": [
+      "04_control_structures/04_0_intro.md",
+      "04_control_structures/04_1_conditionals",
+      "04_control_structures/04_2_loops",
+      "04_control_structures/04_3_iteration_tools",
+      "04_control_structures/04_4_comprehensions.md"
+    ],
+    "05_file_io": [
+      "05_file_io/05_0_intro.md",
+      "05_file_io/05_1_read_write.md",
+      "05_file_io/05_2_paths.md"
+    ],
+    "06_functions": [
+      "06_functions/06_00_intro.md",
+      "06_functions/06_01_basics.md",
+      "06_functions/06_02_parameters_and_arguments.md",
+      "06_functions/06_03_scope_legb.md",
+      "06_functions/06_04_return_values.md",
+      "06_functions/06_05_pure_functions.md",
+      "06_functions/06_06_docstrings_and_doctests.md",
+      "06_functions/06_07_advanced_parameters.md",
+      "06_functions/06_08_lambda_functions.md",
+      "06_functions/06_09_higher_order_functions.md",
+      "06_functions/06_10_recursion.md",
+      "06_functions/06_11_closures_and_decorators.md"
+    ],
+    "06_oop": [
+      "06_oop/06_00_intro.md",
+      "06_oop/06_01_classes_and_objects.md",
+      "06_oop/06_02_attributes_and_methods.md",
+      "06_oop/06_03_init_and_self.md",
+      "06_oop/06_04_encapsulation.md",
+      "06_oop/06_05_inheritance.md",
+      "06_oop/06_06_polymorphism.md",
+      "06_oop/06_07_magic_methods.md",
+      "06_oop/06_08_class_and_static_methods.md",
+      "06_oop/06_09_composition_vs_inheritance.md",
+      "06_oop/06_10_abc_and_protocol.md",
+      "06_oop/06_11_mro.md",
+      "06_oop/06_12_object_lifecycle.md",
+      "06_oop/06_13_dataclass.md",
+      "06_oop/06_14_slots.md"
+    ],
+    "07_exceptions": [
+      "07_exceptions/07_0_intro.md",
+      "07_exceptions/07_1_what_are_exceptions.md",
+      "07_exceptions/07_2_try_except.md",
+      "07_exceptions/07_3_exception_hierarchy.md",
+      "07_exceptions/07_4_raise_and_assert.md",
+      "07_exceptions/07_5_custom_exceptions.md",
+      "07_exceptions/07_6_context_managers.md"
+    ],
+    "img": [
+      "img/readme_1.png",
+      "img/readme_2.png",
+      "img/02_1.png",
+      "img/02_2.png"
+    ],
+    "08_modules": [
+      "08_modules/08_1_modules_and_import.md"
+    ],
+    "04_control_structures/04_1_conditionals": [
+      "04_control_structures/04_1_conditionals/04_1_0_if_else.md",
+      "04_control_structures/04_1_conditionals/04_1_1_ternary.md"
+    ],
+    "04_control_structures/04_2_loops": [
+      "04_control_structures/04_2_loops/04_2_0_for_loop.md",
+      "04_control_structures/04_2_loops/04_2_1_while_loop.md",
+      "04_control_structures/04_2_loops/04_2_2_loop_control.md"
+    ],
+    "04_control_structures/04_3_iteration_tools": [
+      "04_control_structures/04_3_iteration_tools/04_3_0_range.md",
+      "04_control_structures/04_3_iteration_tools/04_3_1_enumerate.md",
+      "04_control_structures/04_3_iteration_tools/04_3_2_zip.md"
+    ]
+  },
+  "draggingEnabled": true,
+  "selectedSortOrder": "manual-sorting"
+}
