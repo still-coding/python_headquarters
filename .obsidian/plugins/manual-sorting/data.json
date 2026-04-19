@@ -8,9 +8,10 @@
       "04_control_structures",
       "05_file_io",
       "06_functions",
-      "06_oop",
-      "07_exceptions",
-      "08_modules",
+      "07_oop",
+      "08_exceptions",
+      "09_modules",
+      "10_oop_advanced",
       "img",
       "README.md"
     ],
@@ -50,6 +51,20 @@
       "04_control_structures/04_3_iteration_tools",
       "04_control_structures/04_4_comprehensions.md"
     ],
+    "04_control_structures/04_1_conditionals": [
+      "04_control_structures/04_1_conditionals/04_1_0_if_else.md",
+      "04_control_structures/04_1_conditionals/04_1_1_ternary.md"
+    ],
+    "04_control_structures/04_2_loops": [
+      "04_control_structures/04_2_loops/04_2_0_for_loop.md",
+      "04_control_structures/04_2_loops/04_2_1_while_loop.md",
+      "04_control_structures/04_2_loops/04_2_2_loop_control.md"
+    ],
+    "04_control_structures/04_3_iteration_tools": [
+      "04_control_structures/04_3_iteration_tools/04_3_0_range.md",
+      "04_control_structures/04_3_iteration_tools/04_3_1_enumerate.md",
+      "04_control_structures/04_3_iteration_tools/04_3_2_zip.md"
+    ],
     "05_file_io": [
       "05_file_io/05_0_intro.md",
       "05_file_io/05_1_read_write.md",
@@ -69,54 +84,54 @@
       "06_functions/06_10_recursion.md",
       "06_functions/06_11_closures_and_decorators.md"
     ],
-    "06_oop": [
-      "06_oop/06_00_intro.md",
-      "06_oop/06_01_classes_and_objects.md",
-      "06_oop/06_02_attributes_and_methods.md",
-      "06_oop/06_03_init_and_self.md",
-      "06_oop/06_04_encapsulation.md",
-      "06_oop/06_05_inheritance.md",
-      "06_oop/06_06_polymorphism.md",
-      "06_oop/06_07_magic_methods.md",
-      "06_oop/06_08_class_and_static_methods.md",
-      "06_oop/06_09_composition_vs_inheritance.md",
-      "06_oop/06_10_abc_and_protocol.md",
-      "06_oop/06_11_mro.md",
-      "06_oop/06_12_object_lifecycle.md",
-      "06_oop/06_13_dataclass.md",
-      "06_oop/06_14_slots.md"
+    "07_oop": [
+      "07_oop/07_00_intro.md",
+      "07_oop/07_01_classes_and_objects.md",
+      "07_oop/07_02_attributes_and_methods.md",
+      "07_oop/07_03_init_and_self.md",
+      "07_oop/07_04_encapsulation.md",
+      "07_oop/07_05_inheritance.md",
+      "07_oop/07_06_polymorphism.md",
+      "07_oop/07_07_magic_methods.md",
+      "07_oop/07_08_class_and_static_methods.md",
+      "07_oop/07_09_composition_vs_inheritance.md",
+      "07_oop/07_10_abc_and_protocol.md",
+      "07_oop/07_11_mro.md",
+      "07_oop/07_12_object_lifecycle.md",
+      "07_oop/07_13_dataclass.md",
+      "07_oop/07_14_slots.md"
     ],
-    "07_exceptions": [
-      "07_exceptions/07_0_intro.md",
-      "07_exceptions/07_1_what_are_exceptions.md",
-      "07_exceptions/07_2_try_except.md",
-      "07_exceptions/07_3_exception_hierarchy.md",
-      "07_exceptions/07_4_raise_and_assert.md",
-      "07_exceptions/07_5_custom_exceptions.md",
-      "07_exceptions/07_6_context_managers.md"
+    "08_exceptions": [
+      "08_exceptions/08_0_intro.md",
+      "08_exceptions/08_1_what_are_exceptions.md",
+      "08_exceptions/08_2_try_except.md",
+      "08_exceptions/08_3_exception_hierarchy.md",
+      "08_exceptions/08_4_raise_and_assert.md",
+      "08_exceptions/08_5_custom_exceptions.md",
+      "08_exceptions/08_6_context_managers.md"
+    ],
+    "09_modules": [
+      "09_modules/09_6_venv_and_pip.md",
+      "09_modules/09_0_intro.md",
+      "09_modules/09_1_modules_and_import.md",
+      "09_modules/09_2_how_import_works.md",
+      "09_modules/09_3_packages.md",
+      "09_modules/09_4_relative_imports.md",
+      "09_modules/09_5_dunder_name.md"
+    ],
+    "10_oop_advanced": [
+      "10_oop_advanced/10_5_design_patterns.md",
+      "10_oop_advanced/10_0_intro.md",
+      "10_oop_advanced/10_1_descriptors.md",
+      "10_oop_advanced/10_2_mixins.md",
+      "10_oop_advanced/10_3_metaclasses.md",
+      "10_oop_advanced/10_4_enums.md"
     ],
     "img": [
       "img/readme_1.png",
       "img/readme_2.png",
       "img/02_1.png",
       "img/02_2.png"
-    ],
-    "08_modules": [
-      "08_modules/08_1_modules_and_import.md"
-    ],
-    "04_control_structures/04_1_conditionals": [
-      "04_control_structures/04_1_conditionals/04_1_0_if_else.md",
-      "04_control_structures/04_1_conditionals/04_1_1_ternary.md"
-    ],
-    "04_control_structures/04_2_loops": [
-      "04_control_structures/04_2_loops/04_2_0_for_loop.md",
-      "04_control_structures/04_2_loops/04_2_1_while_loop.md",
-      "04_control_structures/04_2_loops/04_2_2_loop_control.md"
-    ],
-    "04_control_structures/04_3_iteration_tools": [
-      "04_control_structures/04_3_iteration_tools/04_3_0_range.md",
-      "04_control_structures/04_3_iteration_tools/04_3_1_enumerate.md",
-      "04_control_structures/04_3_iteration_tools/04_3_2_zip.md"
     ]
   },
   "draggingEnabled": true,
